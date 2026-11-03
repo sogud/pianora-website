@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,follow">
+<title>琴昼 Pianora · 钢琴练习</title>
+<meta name="description" content="连接 MIDI 键盘，看谱跟弹。琴昼是开发中的本地桌面钢琴练习软件，尚未公开发布。">
+<meta property="og:title" content="琴昼 Pianora · 钢琴练习">
+<meta property="og:description" content="连接 MIDI 键盘，看谱跟弹。桌面原型，开发中。">
+<meta property="og:type" content="website">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=2">
+<script src="site.js?v=2" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至正文</a>
+<header><a class="brand" href="./" aria-current="page"><img src="icon.svg" alt="" width="32" height="32"><span>琴昼 <small>Pianora</small></span></a><span class="status">桌面原型 · 开发中</span></header>
+<main id="main">
+<section class="intro"><h1>连接 MIDI 键盘，<br>看谱跟弹。</h1><p>本地曲谱、示范播放和分段练习。<br>目前以 macOS 为主，尚未公开发布。</p></section>
+<figure class="practice">
+<div class="practice-heading"><span>谱面与琴键</span><span class="caption-label">网页交互示意</span></div>
+<div class="score-area">
+<div class="score-label"><span>C 大调</span><span>右手</span></div>
+<svg class="score" viewBox="0 0 900 180" role="img" aria-label="C4、D4、E4、F4、G4 五个音符的谱面示意">
+<g class="staff"><path d="M60 48H840 M60 66H840 M60 84H840 M60 102H840 M60 120H840"/></g>
+<text x="74" y="126" class="clef">&#119070;</text>
+<g class="score-note selected" data-note="C"><ellipse cx="240" cy="138" rx="13" ry="9" transform="rotate(-18 240 138)"/><path d="M252 136V76 M219 138H261"/></g>
+<g class="score-note" data-note="D"><ellipse cx="370" cy="129" rx="13" ry="9" transform="rotate(-18 370 129)"/><path d="M382 127V67"/></g>
+<g class="score-note" data-note="E"><ellipse cx="500" cy="120" rx="13" ry="9" transform="rotate(-18 500 120)"/><path d="M512 118V58"/></g>
+<g class="score-note" data-note="F"><ellipse cx="630" cy="111" rx="13" ry="9" transform="rotate(-18 630 111)"/><path d="M642 109V49"/></g>
+<g class="score-note" data-note="G"><ellipse cx="760" cy="102" rx="13" ry="9" transform="rotate(-18 760 102)"/><path d="M772 100V40"/></g>
+</svg>
+<div class="note-picker" role="group" aria-label="选择示意音符">
+<button type="button" data-note="C" aria-pressed="true">C</button>
+<button type="button" data-note="D" aria-pressed="false">D</button>
+<button type="button" data-note="E" aria-pressed="false">E</button>
+<button type="button" data-note="F" aria-pressed="false">F</button>
+<button type="button" data-note="G" aria-pressed="false">G</button>
+</div>
+</div>
+<div class="instrument">
+<div class="instrument-label"><span>Pianora</span><output id="current-note" aria-live="polite">当前示意音：C4</output></div>
+<div class="keyboard" role="img" aria-label="一组钢琴琴键，当前高亮 C4">
+<div class="white selected" data-note="C"><span>C4</span></div><div class="white" data-note="D"><span>D</span></div><div class="white" data-note="E"><span>E</span></div><div class="white" data-note="F"><span>F</span></div><div class="white" data-note="G"><span>G</span></div><div class="white"><span>A</span></div><div class="white"><span>B</span></div><div class="white"><span>C5</span></div>
+<i class="black b1"></i><i class="black b2"></i><i class="black b3"></i><i class="black b4"></i><i class="black b5"></i>
+</div>
+</div>
+<figcaption>点击音名查看对应琴键。此示意不发声、不连接 MIDI，非 App 截图。</figcaption>
+</figure>
+<section class="current" aria-label="当前功能与进度">
+<h2>当前功能</h2>
+<div><p>内置练习与 MIDI / MusicXML 导入，支持示范、跟弹和乐句循环。</p><p class="muted">暂不提供节奏评分或真实手型识别。3D 手部演示仅覆盖已编排的姿势。</p></div>
+</section>
+</main>
+<footer><span>琴昼 · Pianora</span><details><summary>网站说明</summary><p>本页为开发预览，无统计、表单或账户功能。上述交互只用于解释谱面与琴键关系。</p></details></footer>
+</body>
+</html>
